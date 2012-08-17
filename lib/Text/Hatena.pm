@@ -169,7 +169,16 @@ Text::Hatena - The new "Text-to-HTML converter" with Hatena syntax.
   use Text::Hatena;
 
   my $parser = Text::Hatena->new;
-  $parser->parse($string);
+  my $html = $parser->parse($string);
+
+  # Text::Hatena 0.16 style
+  my $html = $parser->html;
+
+  # Text::Hatena 0.20 style
+  my $html = Text::Hatena->parse($string);
+
+  # Text::Xatena style
+  my $html = $parser->format($string);
 
 =head1 DESCRIPTION
 
