@@ -130,6 +130,8 @@ sub parse {
     $self->{html} = $self->{root}->as_html($self);
 }
 
+*format = \&parse;
+
 sub inline {
     my $self = shift;
     Text::Hatena::Inline::Parser->new(
@@ -163,8 +165,8 @@ Text::Hatena - The new "Text-to-HTML converter" with Hatena syntax.
 
   use Text::Hatena;
 
-  my $thx = Text::Hatena->new;
-  $thx->format($string);
+  my $parser = Text::Hatena->new;
+  $parser->parse($string);
 
 =head1 DESCRIPTION
 
