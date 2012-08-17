@@ -8,15 +8,18 @@ use Test::More;
 
 use Text::Hatena;
 
+my $result = '<p><a href="mailto:example@hatena.ne.jp">example@hatena.ne.jp</a></p>' . "\n";
+
 my $hatena = Text::Hatena->new;
 $hatena->parse('mailto:example@hatena.ne.jp');
-is +$hatena->html, '<p><a href="mailto:example@hatena.ne.jp">example@hatena.ne.jp</a></p>' . "\n";
+is +$hatena->html, $result, 'new して parse して html';
 
-is $hatena->parse('mailto:example@hatena.ne.jp'),
-    '<p><a href="mailto:example@hatena.ne.jp">example@hatena.ne.jp</a></p>' . "\n";
+$hatena = Text::Hatena->new;
+is $hatena->parse('mailto:example@hatena.ne.jp'), $result, 'new して parse';
 
-$hatena->format('mailto:example@hatena.ne.jp');
-is +$hatena->html, '<p><a href="mailto:example@hatena.ne.jp">example@hatena.ne.jp</a></p>' . "\n";
+is(Text::Hatena->parse('mailto:example@hatena.ne.jp'), $result, 'クラスメソッドで parse');
+
+is(Text::Hatena->format('mailto:example@hatena.ne.jp'), $result, 'format');
 
 done_testing;
 

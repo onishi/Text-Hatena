@@ -106,6 +106,9 @@ sub html {
 sub parse {
     my ($self, $string) = @_;
 
+    # クラスメソッドとしても呼べるように (Text::Hatena 0.20 のインターフェース後方互換)
+    ref($self) or $self = $self->new;
+
     # Parse blocks
 
     $string =~ s{\r\n?}{\n}g;
