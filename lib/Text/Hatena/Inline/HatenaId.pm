@@ -21,7 +21,7 @@ build_inlines {
         \[ $SYNTAX_PATTERN \] | $SYNTAX_PATTERN
     }ix => sub {
         my ($context, $attr) = @_;
-        my ($user, $type) = map { $attr->{$_} // $+{$_} } qw/user type/;
+        my ($user, $type) = map { $attr->{$_} // $+{$_} // '' } qw/user type/;
         my $urlbase = $context->{urlbase} || $context->{stash}->{urlbase} || '/';
         if ($type && lc $type eq 'icon') {
             my $pre = substr($user, 0, 2);

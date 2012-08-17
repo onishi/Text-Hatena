@@ -5,8 +5,8 @@ use Text::Hatena::Test;
 use Cache::MemoryCache;
 use LWP::UserAgent;
 use LWP::Simple;
-local $Text::Hatena::Test::INLINE = "Text::Hatena::Inline::Aggressive";
-local $Text::Hatena::Test::INLINE_ARGS = [ cache => Cache::MemoryCache->new ];
+#local $Text::Hatena::Test::INLINE = "Text::Hatena::Inline::Aggressive";
+#local $Text::Hatena::Test::INLINE_ARGS = [ cache => Cache::MemoryCache->new ];
 {
     no warnings 'redefine';
     *LWP::UserAgent::get = sub {

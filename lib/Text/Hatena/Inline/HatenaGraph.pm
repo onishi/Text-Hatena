@@ -32,7 +32,7 @@ build_inlines {
     }ix => sub {
         my ($context, $attr) = @_;
         my ($syntax, $tag, $name, $graphname, $type, $size, $day)
-            = map { $attr->{$_} // $+{$_} } qw/syntax tag name graph type size day/;
+            = map { $attr->{$_} // $+{$_} // '' } qw/syntax tag name graph type size day/;
         $syntax =~ s{^\[(.+)\]$}{$1};
         my $link_target = $context->link_target;
         if ($tag) {

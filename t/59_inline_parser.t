@@ -151,7 +151,6 @@ foo<!-- -->baz
 <span data-unlink>f:id:onishi:20101106112600j:image</span>
 
 === data-unlink
---- ONLY
 --- input
 <span data-unlink>f:id:onishi:20101106112600j:image</span>f:id:onishi:20101106112600j:image
 --- expected
