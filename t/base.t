@@ -18,8 +18,8 @@ $hatena = Text::Hatena->new;
 is $hatena->parse('mailto:example@hatena.ne.jp'), $result, 'new して parse';
 
 is(Text::Hatena->parse('mailto:example@hatena.ne.jp'), $result, 'クラスメソッドで parse');
-
 is(Text::Hatena->format('mailto:example@hatena.ne.jp'), $result, 'format');
+is(Text::Hatena->parse_string('mailto:example@hatena.ne.jp'), $result, 'parse_string');
 
 done_testing;
 

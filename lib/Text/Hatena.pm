@@ -136,6 +136,7 @@ sub parse {
 }
 
 *format = \&parse;
+*parse_string = \&parse;
 
 sub inline {
     my $self = shift;
