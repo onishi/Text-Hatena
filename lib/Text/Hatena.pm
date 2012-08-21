@@ -7,7 +7,7 @@ use parent qw(Text::Hatena::Context);
 use Carp;
 use Cache::MemoryCache;
 
-our $VERSION = '0.01';
+our $VERSION = '0.30';
 
 use Text::Hatena::Util;
 use Text::Hatena::Inline::Parser;
