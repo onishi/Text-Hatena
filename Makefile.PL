@@ -21,6 +21,7 @@ requires 'Text::MicroTemplate';
 requires 'Text::VimColor';
 requires 'UNIVERSAL::require';
 requires 'URI::Escape';
+requires 'Web::oEmbed';
 requires 'Class::Accessor::Fast';
 requires 'Class::Accessor::Lvalue::Fast';
 
