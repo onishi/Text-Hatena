@@ -1,4 +1,13 @@
 Revision history for Perl extension Text::Hatena
 
-0.01    Fri Aug 17 17:44:59 2012
-        - original version
+0.31    Wed Sep 25 15:28:58 JST 2013
+	- HTML5 support
+	- Microdata support
+        - Added http:star
+        - Added http:favicon
+        - Allowed multibyte char in TeX
+	- http:embed supported pixiv, instagram
+	- Don't insert BR in SCRIPT/STYLE/TABLE/LIST
+
+0.30    Fri Aug 17 17:44:59 JST 2012
+        - Full Renewal from Text::Xatena
