@@ -15,7 +15,8 @@ my $embed = Text::Hatena::Embed->new;
 
 # oEmbed に行かずに返す
 subtest direct => sub {
-    is $embed->render('https://gist.github.com/1833407'), '<script src="https://gist.github.com/1833407.js"> </script>', 'gist';
+    is $embed->render('https://gist.github.com/1833407'), '<script src="https://gist.github.com/1833407.js"> </script>', 'gist(ユーザー名なし)';
+    is $embed->render('https://gist.github.com/motemen/1833407'), '<script src="https://gist.github.com/motemen/1833407.js"> </script>', 'gist(ユーザー名あり)';
 
     is $embed->render('http://www.youtube.com/watch?v=KctH2tiRo-M&feature=g-all-pls&context=G2c95300FAAAAAAAAAAA'), '<iframe width="420" height="315" src="http://www.youtube.com/embed/KctH2tiRo-M?wmode=transparent" frameborder="0" allowfullscreen></iframe>', 'YouTubeの動画IDには-も入る';
 
@@ -24,6 +25,12 @@ subtest direct => sub {
     is $embed->render('http://flipnote.hatena.com/0EB03A80BC7D7DBA@DSi/movie/7DD445_086B8A571518B_000'), '<object data="http://flipnote.hatena.com/js/flipplayer_s.swf" type="application/x-shockwave-flash" width="279" height="240"><param name="movie" value="http://flipnote.hatena.com/js/flipplayer_s.swf"></param><param name="FlashVars" value="did=0EB03A80BC7D7DBA&file=7DD445_086B8A571518B_000"></param></object>', 'flipnote';
 
     is $embed->render('http://www.nicovideo.jp/watch/sm1128042'), '<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/sm1128042"></script>', 'nicovideo';
+
+    is $embed->render('http://instagram.com/p/bpI2LBhD8Y/'), '<iframe src="//instagram.com/p/bpI2LBhD8Y/embed/" data-entry-image="http://instagram.com/p/bpI2LBhD8Y/media/?size=l" width="612" height="710" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'instagram';
+    is $embed->render('http://instagram.com/p/a4-mLmgdpb/'), '<iframe src="//instagram.com/p/a4-mLmgdpb/embed/" data-entry-image="http://instagram.com/p/a4-mLmgdpb/media/?size=l" width="612" height="710" frameborder="0" scrolling="no" allowtransparency="true"></iframe>', 'instagram ハイフン含むとき';
+
+    is $embed->render('http://www.pixiv.net/member_illust.php?mode=medium&illust_id=37108875'), '<iframe src="http://embed.pixiv.net/fixed.php?id=37108875" width="400" height="350" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>', 'pixiv';
+    is $embed->render('http://www.pixiv.net/member_illust.php?illust_id=37108875'), '<iframe src="http://embed.pixiv.net/fixed.php?id=37108875" width="400" height="350" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>', 'pixiv(modeなし)';
 };
 
 # request_url 拡張
@@ -65,35 +72,6 @@ subtest oembed => sub {
     );
 
     is $embed->render('http://www.flickr.com/photos/bulknews/2752124387/'), '<img alt="IMG_3069.JPG" height="375" src="http://farm4.staticflickr.com/3035/2752124387_873bd71a7b.jpg" width="500" />', 'flickr';
-};
-
-subtest og_image => sub {
-    my $s = Test::LWP::Stub->new;
-    $s->register(
-        'http://instagr.am/p/H5qztakWsT/' => sub {
-            [
-                200,
-                [ 'Content-Type' => 'text/html' ],
-                [ '<meta property="og:image" content="http://distilleryimage7.instagram.com/6481b47e68e611e1b9f1123138140926_7.jpg" />
-' ]
-            ]
-        }
-    );
-
-    $s->register(
-        'http://instagram.com/p/H5qztakWsT/' => sub {
-            [
-                200,
-                [ 'Content-Type' => 'text/html' ],
-                [ '<meta property="og:image" content="http://distilleryimage7.instagram.com/6481b47e68e611e1b9f1123138140926_7.jpg" />
-' ]
-            ]
-        }
-    );
-
-    is $embed->render('http://instagr.am/p/H5qztakWsT/'), '<a href="http://instagr.am/p/H5qztakWsT/"><img src="http://distilleryimage7.instagram.com/6481b47e68e611e1b9f1123138140926_7.jpg" class="lightbox embed-instagram" alt="" /></a>', 'instagram';
-
-    is $embed->render('http://instagram.com/p/H5qztakWsT/'), '<a href="http://instagram.com/p/H5qztakWsT/"><img src="http://distilleryimage7.instagram.com/6481b47e68e611e1b9f1123138140926_7.jpg" class="lightbox embed-instagram" alt="" /></a>', 'instagram';
 };
 
 subtest auto_discovery => sub {

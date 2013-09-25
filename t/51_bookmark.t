@@ -25,6 +25,18 @@ b:id:sample:20050707
 --- expected
 <p><a href="http://b.hatena.ne.jp/sample/20050707">b:id:sample:20050707</a></p>
 
+=== b:id:entry 1
+--- input
+b:id:entry:1
+--- expected
+<p><a href="http://b.hatena.ne.jp/entry/1">b:id:entry:1</a></p>
+
+=== b:id:entry 2
+--- input
+b:id:entry:123456789
+--- expected
+<p><a href="http://b.hatena.ne.jp/entry/123456789">b:id:entry:123456789</a></p>
+
 === b:id:favorite
 --- input
 b:id:sample:favorite

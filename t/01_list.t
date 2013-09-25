@@ -214,3 +214,12 @@ test
 <ul>
 	<li>bar</li>
 </ul>
+
+=== bug
+--- input
+:[http://www.hatena.ne.jp]:hatena
+--- expected
+<dl>
+    <dt><a href="http://www.hatena.ne.jp" target="_blank">http://www.hatena.ne.jp</a></dt>
+    <dd>hatena</dd>
+</dl>

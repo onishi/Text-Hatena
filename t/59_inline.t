@@ -190,3 +190,11 @@ http://example.com/
 <p>
 <img alt="\sqrt[3]{4}" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%5Csqrt%5B3%5D%7B4%7D"></img>
 </p>
+
+=== [tex:] マルチバイト
+--- input
+[tex:ほげ]
+--- expected
+<p>
+<img alt="ほげ" src="http://chart.apis.google.com/chart?cht=tx&amp;chl=%E3%81%BB%E3%81%92"></img>
+</p>

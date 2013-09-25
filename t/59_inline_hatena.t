@@ -154,7 +154,11 @@ k:id:jkondo
 --- input
 f:id:hatenadiary:20041007101545f:image
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545f:image" title="f:id:hatenadiary:20041007101545f:image" class="hatena-fotolife"></a></p>
+<p>
+<span itemscope itemtype="http://scheam.org/Photograph">
+<a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545f:image" title="f:id:hatenadiary:20041007101545f:image" class="hatena-fotolife" itemprop="image"></a>
+</span>
+</p>
 
 === f:id:fid:movie
 --- input

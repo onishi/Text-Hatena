@@ -30,7 +30,7 @@ id:onishi:icon
 --- expected
 <p>
   <a class="hatena-id-icon" href="http://test.hatena.ne.jp/onishi/">
-    <img alt="id:onishi" class="hatena-id-icon" height="16" src="http://cdn1.www.st-hatena.com/users/on/onishi/profile_s.gif" width="16"></img>
+    <img alt="id:onishi" class="hatena-id-icon" height="16" src="http://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="16"></img>
   </a>
 </p>
 
@@ -50,7 +50,7 @@ id:onishi:detail
 --- expected
 <p>
   <a href="http://test.hatena.ne.jp/onishi/" class="hatena-id-icon">
-    <img src="http://cdn1.www.st-hatena.com/users/on/onishi/profile_s.gif" width="16" height="16" alt="" class="hatena-id-icon">
+    <img src="http://cdn1.www.st-hatena.com/users/on/onishi/profile.gif" width="16" height="16" alt="" class="hatena-id-icon">
     id:onishi
   </a>
 </p>
@@ -69,9 +69,9 @@ id:onishi:archive
 
 === id adjoining Japanese
 --- input
-id:jkondo社長
+あid:jkondo社長
 --- expected
-<p><a href="http://test.hatena.ne.jp/jkondo/">id:jkondo</a>社長</p>
+<p>あ<a href="http://test.hatena.ne.jp/jkondo/">id:jkondo</a>社長</p>
 
 === id adjoining english
 --- input

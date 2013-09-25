@@ -64,37 +64,37 @@ http://example.com/
 --- input
 f:id:onishi:20101106112600j:image
 --- expected
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <hatena f:id>
 --- input
 <hatena f:id:onishi:20101106112600j:image>
 --- expected
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <hatena f:id>
 --- input
 <hatena f:id:onishi:20101106112600j:image class="hoge">
 --- expected
-<a class="hatena-fotolife hoge" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span class="hoge" itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <hatena f:id>
 --- input
 <hatena f:id:onishi:20101106112600j:image data-hoge="hoge">
 --- expected
-<a class="hatena-fotolife" data-hoge="hoge" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span data-hoge="hoge" itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <hatena:f:id>
 --- input
 <hatena:f:id:onishi:20101106112600j:image>
 --- expected
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <f:id>
 --- input
 <f:id:onishi:20101106112600j:image>
 --- expected
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <hoge> invalid tag
 --- input
@@ -106,13 +106,13 @@ f:id:onishi:20101106112600j:image
 --- input
 <hatena:f user="onishi" fid="20101106112600j" type="image">
 --- expected
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === <hatena:f />
 --- input
 <hatena:f user="onishi" fid="20101106112600" ext="j" type="image">
 --- expected
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a>
+<span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
 
 === comment
 --- input
@@ -130,7 +130,7 @@ foo<!-- -->baz
 --- input
 <span>f:id:onishi:20101106112600j:image</span>
 --- expected
-<span><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span>
+<span><span itemscope="itemscope" itemtype="http://schema.org/Photograph"><a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank"><img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img></a></span></span>
 
 === script
 --- input
@@ -155,7 +155,14 @@ foo<!-- -->baz
 <span data-unlink>f:id:onishi:20101106112600j:image</span>f:id:onishi:20101106112600j:image
 --- expected
 <span data-unlink>f:id:onishi:20101106112600j:image</span>
-<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" target="_blank">
-<img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img>
+<span itemscope itemtype="http://schema.org/Photograph">
+<a class="hatena-fotolife" href="http://f.hatena.ne.jp/onishi/20101106112600" itemprop="url" target="_blank">
+<img alt="f:id:onishi:20101106112600j:image" class="hatena-fotolife" itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/o/onishi/20101106/20101106112600.jpg" title="f:id:onishi:20101106112600j:image"></img>
 </a>
+</span>
 
+=== unknown-tag
+--- input
+<unko>hoge</unko>
+--- expected
+<unko>hoge</unko>

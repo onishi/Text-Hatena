@@ -8,7 +8,7 @@ use base qw/HTML::Parser Class::Accessor::Lvalue::Fast/;
 __PACKAGE__->mk_accessors(qw/html tmp stack depth words re/);
 
 # タグ内のテキストは自動リンクしない
-our $no_anchor_tags = join '|', qw/a style textarea script iframe/;
+our $no_anchor_tags = join '|', qw/a style textarea script iframe code/;
 
 sub initialize {
     my $self = shift;
@@ -47,7 +47,6 @@ sub text {
 
 sub end {
     my ($self, $tagname, $text) = @_;
-    $self->depth--;
     $self->format_tmp;
 
     if ($tagname =~ /$no_anchor_tags/i) {
@@ -60,6 +59,7 @@ sub end {
     if ($self->stack->{unlink} && $self->stack->{unlink} == $self->depth) {
         delete $self->stack->{unlink};
     }
+    $self->depth--;
     $self->html .= $text;
 }
 

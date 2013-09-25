@@ -11,7 +11,7 @@ use HTML::Tagset;
 __PACKAGE__->mk_accessors(qw/inlines context html tmp re inline_nodes stack depth/);
 
 # タグ内のテキストは自動リンクしない
-our $no_anchor_tags = join '|', qw/a style textarea script iframe/;
+our $no_anchor_tags = join '|', qw/a style textarea script iframe code/;
 
 sub new {
     my $class = shift;
@@ -219,6 +219,7 @@ sub end {
         $self->html .= $text;
     } else {
         #warn "\nend: unknown $tagname\n";
+        $self->html .= $text;
     }
 }
 

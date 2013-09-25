@@ -27,6 +27,10 @@ my $embeds = [
         format => q{<script src="https://gist.github.com/{{= $id }}.js"> </script>},
     },
     {
+        regexp => qr{^https?://gist.github.com/(?<user_name>[^/]+)/(?<id>\d+)}i,
+        format => q{<script src="https://gist.github.com/{{= $user_name }}/{{= $id }}.js"> </script>},
+    },
+    {
         regexp => qr{^https?://(?:jp|www)[.]youtube[.]com/watch[?]v=(?<id>[\w\-]+)}i,
         format => q{<iframe width="420" height="315" src="http://www.youtube.com/embed/{{= $id }}?wmode=transparent" frameborder="0" allowfullscreen></iframe>},
     },
@@ -51,16 +55,23 @@ my $embeds = [
         regexp => qr{^http://www.nicovideo.jp/watch/(?<vid>\w+)}i,
         format => q{<script type="text/javascript" src="http://ext.nicovideo.jp/thumb_watch/{{= $vid }}"></script>},
     },
-
+    {
+        regexp => qr{https?://(?:instagr[.]am|instagram[.]com)/p/(?<id>[^/?&]+)/?}i,
+        format => q{<iframe src="//instagram.com/p/{{= $id }}/embed/" data-entry-image="http://instagram.com/p/{{= $id }}/media/?size=l" width="612" height="710" frameborder="0" scrolling="no" allowtransparency="true"></iframe>},
+    },
+    {
+        # data-entry-imageを指定するため，pixivのiframe展開はクライアントサイドでもやっています．画像URL持っていれば，クライアントサイドで展開するほうがユーザー体験良い．lHatena.Diary.Pages.Admin['user-blog-edit'].Pixivあたりを参照
+        regexp => qr{^http://www[.]pixiv[.]net/member_illust[.]php[?].*illust_id=(?<illust_id>\d+)/?}i,
+        format => q{<iframe src="http://embed.pixiv.net/fixed.php?id={{= $illust_id }}" width="400" height="350" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>},
+    },
 ];
 
 # og:image から画像にするもの
 my $og_images = [
-    {
-        name   => 'instagram',
-        #regexp => qr{https?://instagr[.]am/p/\w+/?}i,
-        regexp => qr{https?://(?:instagr[.]am|instagram[.]com)/p/\w+/?}i,
-    },
+    # {
+    #     name   => 'instagram',
+    #     regexp => qr{https?://(?:instagr[.]am|instagram[.]com)/p/\w+/?}i,
+    # },
 ];
 
 # oEmbed 対応プロバイダを定義しておく

@@ -35,7 +35,7 @@ build_inlines {
     };
 
     # [b:id:___:favorite] (or :asin or :YYYYMMDD)
-    syntax qr/\[?((?<![[:alnum:]])b:id:($UNAME_PATTERN)(?::(favorite|asin|\d{8}))?)\]?/ix => sub {
+    syntax qr/\[?((?<![[:alnum:]])b:id:($UNAME_PATTERN)(?::(favorite|asin|\d+))?)\]?/ix => sub {
         my ($context, $name, $username, $type) = @_;
         $type ||= '';
         qq{<a href="http://b.hatena.ne.jp/$username/$type">$name</a>};

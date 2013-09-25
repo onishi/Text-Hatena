@@ -7,7 +7,7 @@ use parent qw(Text::Hatena::Context);
 use Carp;
 use Cache::MemoryCache;
 
-our $VERSION = '0.30';
+our $VERSION = '0.31';
 
 use Text::Hatena::Util;
 use Text::Hatena::Inline::Parser;
@@ -111,6 +111,8 @@ sub parse {
     # クラスメソッドとしても呼べるように (Text::Hatena 0.20 のインターフェース後方互換)
     ref($self) or $self = $self->new;
 
+    $string //= '';
+
     # Parse blocks
 
     $string =~ s{\r\n?}{\n}g;
@@ -209,4 +211,3 @@ This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
 
 =cut
-

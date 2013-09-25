@@ -20,6 +20,9 @@ my $SYNTAX_PATTERN = qr{
     )?
 }xi;
 
+my $MICRODATA_ANCHOR_ATTR = qq{ itemprop="url"};
+my $MICRODATA_IMAGE_ATTR  = qq{ itemprop="image"};
+
 build_inlines {
     <hatena:f />;
     # [f:id:___]
@@ -59,11 +62,12 @@ build_inlines {
             my $date = substr($fid,0,8);
             if ($context->{mobile}) {
                 # 081117 center やめる
-                my $img = qq|<img src="http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext">|;
-                return $type =~ /image/i ? qq|<a href="http://f.hatena.ne.jp/mobile/$user/$fid"$link_target>$img</a>| : $img;
+                my $img = qq|<img src="http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext"$MICRODATA_IMAGE_ATTR>|;
+                my $anchor_or_img = $type =~ /image/i ? qq|<a href="http://f.hatena.ne.jp/mobile/$user/$fid"$link_target$MICRODATA_ANCHOR_ATTR>$img</a>| : $img;
+                return qq|<span itemscope itemtype="http://schema.org/Photograph">$anchor_or_img</span>|;
             } else {
-                my $attr = '';
                 my $class = '';
+                my @style = ();
                 my $src = "http://cdn-ak.f.st-hatena.com/images/fotolife/$firstchar/$user/$date/${fid}.$ext";
                 for my $option (split /[:,]/, $options) {
                     $option or next;
@@ -76,13 +80,15 @@ build_inlines {
                     } elsif ($option eq 'left') {
                         $class .= " hatena-image-left";
                     } elsif ($option =~ /^w(\d+)$/i) {
-                        $attr .= qq{ width="$1"};
+                        push @style, "width:${1}px";
                     } elsif ($option =~ /^h(\d+)$/i) {
-                        $attr .= qq{ height="$1"};
+                        push @style, "height:${1}px";
                     }
                 }
-                my $img = qq|<img src="$src" alt="$name" title="$name" class="hatena-fotolife$class"$attr>|;
-                return $type =~ /image/i ? qq|<a href="http://f.hatena.ne.jp/$user/$fid" class="hatena-fotolife"$link_target>$img</a>| : $img;
+                my $style = @style ? sprintf(' style="%s"', join(';', @style)) : '';
+                my $img = qq|<img src="$src" alt="$name" title="$name" class="hatena-fotolife$class"$style$MICRODATA_IMAGE_ATTR>|;
+                my $anchor_or_img = $type =~ /image/i ? qq|<a href="http://f.hatena.ne.jp/$user/$fid" class="hatena-fotolife"$link_target$MICRODATA_ANCHOR_ATTR>$img</a>| : $img;
+                return qq|<span itemscope itemtype="http://schema.org/Photograph">$anchor_or_img</span>|;
             }
         } elsif ($type =~ /movie/i) {
             my $ret = <<EOD;

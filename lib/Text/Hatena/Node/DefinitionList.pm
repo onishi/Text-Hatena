@@ -36,7 +36,7 @@ sub as_struct {
                 content => $context->inline->format($description),
             };
         } else {
-            my ($title, $description) = ($line =~ /^:([^:]+)(?::(.*))?$/);
+            my ($title, $description) = ($line =~ /^:(\[.*?\]|[^:]+)(?::(.*))?$/);
             push @$ret, +{
                 name => 'dt',
                 content => $context->inline->format($title),

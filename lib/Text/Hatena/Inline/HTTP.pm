@@ -13,8 +13,8 @@ use Text::Hatena::Embed;
 
 my $char_wp  = q{A-Za-z0-9\-\.~/_?&=%#+:;,\@'\$*!\(\)}; # with paren
 my $char_wop = q{A-Za-z0-9\-\.~/_?&=%#+:;,\@'\$*!};     # w/o  paren
-my $pat_option = qr{(?:title|bookmark|barcode|embed|detail|movie(?::(?:small|w\d+|h\d+))*)};
-my $pat_option_in_bracket = qr{(?:title=[^\[\]]+|title|bookmark|barcode|embed(?:\#[^\[\]]*)?|detail|movie(?::(?:small|w\d+|h\d+))*)};
+my $pat_option = qr{(?:title|bookmark|star|favicon|barcode|embed|detail|movie(?::(?:small|w\d+|h\d+))*)};
+my $pat_option_in_bracket = qr{(?:title=[^\[\]\n]*|title|bookmark|star|favicon|barcode|embed(?:\#[^\[\]\n]*)?|detail|movie(?::(?:small|w\d+|h\d+))*)};
 
 build_inlines {
     syntax qr{
@@ -45,7 +45,7 @@ build_inlines {
         # [http]
         \[
         (?<uri>
-            (?:https?|ftp)://[^\[\]]+?
+            (?:https?|ftp)://[^\[\]\n]+?
         )
         (?<option>
             (:$pat_option_in_bracket)+
@@ -77,13 +77,13 @@ build_inlines {
         if (@options) {
             for my $option (@options) {
                 my $sub_option;
-                $option =~ s{^(title)=(.+)$}{$1}i
+                $option =~ s{^(title)=(.*)$}{$1}i
                     and $title = $2;
                 $option =~ s{^(movie):([\w:]+)}{$1}i
                     and $sub_option = $2;
                 $option =~ s{\#.+}{};
                 my $func = lc $option . '_handler';
-                $ret .= $func->($context, $uri, $link_target, $title, $sub_option);
+                $ret .= eval { $func->($context, $uri, $link_target, $title, $sub_option) };
             }
         } else {
             $ret = sprintf(
@@ -101,19 +101,35 @@ sub bookmark_handler {
     my ($context, $uri, $link_target) = @_;
     $uri =~ s/#/%23/;
     sprintf(
-        '<a href="http://b.hatena.ne.jp/entry/%s" class="http-bookmark"%s><img src="http://b.hatena.ne.jp/entry/image/%s" alt="" class="http-bookmark"></a>',
+        '<a href="http://b.hatena.ne.jp/entry/%s" class="http-bookmark"%s><img src="http://b.hatena.ne.jp/entry/image/%s" alt="" class="http-bookmark" /></a>',
         $uri,
         $link_target,
         $uri,
     );
 }
 
+sub star_handler {
+    my ($context, $uri, $link_target) = @_;
+    sprintf(
+        '<img src="http://s.st-hatena.com/entry.count.image?uri=%s" alt="" class="http-star" />',
+        uri_escape_utf8($uri),
+    );
+}
 
+sub favicon_handler {
+    my ($context, $uri, $link_target) = @_;
+    sprintf(
+        '<a href="%s"%s><img src="http://cdn-ak.favicon.st-hatena.com/?url=%s" alt="" class="http-favicon" /></a>',
+        $uri,
+        $link_target,
+        uri_escape_utf8($uri),
+    );
+}
 
 sub title_handler {
     my ($context, $uri, $link_target, $title) = @_;
 
-    $title //= get_title($context, $uri);
+    length($title) or $title = get_title($context, $uri);
 
     sprintf(
         '<a href="%s"%s>%s</a>',
@@ -132,6 +148,8 @@ sub get_title {
             my $res = $context->ua->get($uri);
             my $content = decode_utf8($res->decoded_content || $res->content);
             ($title) = ($content =~ m|<title[^>]*>([^<]*)</title>|i);
+            $title =~ s{^\s+|\s+$}{}g;
+            $title =~ s{\s+}{ }g;
             $context->cache->set($key, $title,  60 * 60 * 24 * 30);
         };
         if ($@) {
@@ -158,7 +176,7 @@ sub movie_handler {
     my ($context, $uri, $link_target, $title, $sub_option) = @_;
     my ($w, $h);
     my @options = split /:/, $sub_option || '';
-    if ($uri =~ m{^https?://(?:jp|www)[.]youtube[.]com/watch[?]v=(\w+)}) {
+    if ($uri =~ m{^https?://(?:jp|www)[.]youtube[.]com/watch[?]v=([\w\-]+)}) {
         for my $option (@options) {
             if (lc $option eq 'small') {
                 $w = 300;

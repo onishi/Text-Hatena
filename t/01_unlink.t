@@ -72,3 +72,9 @@ http://www.hatena.ne.jp/
 --- expected
 <p><span><a href="http://www.hatena.ne.jp/" target="_blank">http://www.hatena.ne.jp/</a></span></p>
 
+=== code
+--- input
+<code>http://www.hatena.ne.jp/</code>
+--- expected
+<p><code>http://www.hatena.ne.jp/</code></p>
+

@@ -16,6 +16,7 @@ my %escape = (
     '"' => '&#34;',
     "'" => '&#39;',
 );
+
 sub escape_html ($) { ## no critic
     my ($str) = @_;
     my $escape = join "|", keys %escape;

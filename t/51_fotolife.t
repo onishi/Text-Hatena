@@ -19,7 +19,7 @@ __END__
 --- input
 f:id:hatenadiary:20041007101545f:image
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545f:image" title="f:id:hatenadiary:20041007101545f:image" class="hatena-fotolife"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545f:image" title="f:id:hatenadiary:20041007101545f:image" class="hatena-fotolife" itemprop="image"></a></span></p>
 
 === f:id:fid:movie
 --- input
@@ -42,49 +42,49 @@ f:id:hatenadiary
 --- input
 f:id:hatenadiary:20041007101545j:image
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image" title="f:id:hatenadiary:20041007101545j:image" class="hatena-fotolife"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image" title="f:id:hatenadiary:20041007101545j:image" class="hatena-fotolife" itemprop="image"></a></span></p>
 
 === f:id:fid:image:small
 --- input
 f:id:hatenadiary:20041007101545j:image:small
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_m.gif" alt="f:id:hatenadiary:20041007101545j:image:small" title="f:id:hatenadiary:20041007101545j:image:small" class="hatena-fotolife"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_m.gif" alt="f:id:hatenadiary:20041007101545j:image:small" title="f:id:hatenadiary:20041007101545j:image:small" class="hatena-fotolife" itemprop="image"></a></span></p>
 
 === f:id:fid:image:medium
 --- input
 f:id:hatenadiary:20041007101545j:image:medium
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_120.jpg" alt="f:id:hatenadiary:20041007101545j:image:medium" title="f:id:hatenadiary:20041007101545j:image:medium" class="hatena-fotolife"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_120.jpg" alt="f:id:hatenadiary:20041007101545j:image:medium" title="f:id:hatenadiary:20041007101545j:image:medium" class="hatena-fotolife"></a></span></p>
 
 === f:id:fid:image:w
 --- input
 f:id:hatenadiary:20041007101545j:image:w50
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:w50" title="f:id:hatenadiary:20041007101545j:image:w50" class="hatena-fotolife" width="50"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:w50" title="f:id:hatenadiary:20041007101545j:image:w50" class="hatena-fotolife" style="width:50px"></a></span></p>
 
 === f:id:fid:image:h
 --- input
 f:id:hatenadiary:20041007101545j:image:h50
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:h50" title="f:id:hatenadiary:20041007101545j:image:h50" class="hatena-fotolife" height="50"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:h50" title="f:id:hatenadiary:20041007101545j:image:h50" class="hatena-fotolife" style="height:50px"></a></span></p>
 
 === f:id:fid:image:right
 --- input
 f:id:hatenadiary:20041007101545j:image:right
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right" title="f:id:hatenadiary:20041007101545j:image:right" class="hatena-fotolife hatena-image-right"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right" title="f:id:hatenadiary:20041007101545j:image:right" class="hatena-fotolife hatena-image-right"></a></span></p>
 
 === f:id:fid:image:left
 --- input
 f:id:hatenadiary:20041007101545j:image:left
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:left" title="f:id:hatenadiary:20041007101545j:image:left" class="hatena-fotolife hatena-image-left"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:left" title="f:id:hatenadiary:20041007101545j:image:left" class="hatena-fotolife hatena-image-left"></a></span></p>
 
 === f:id:fid:image:right,w50,h10
 --- input
 f:id:hatenadiary:20041007101545j:image:right,w50,h10
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right,w50,h10" title="f:id:hatenadiary:20041007101545j:image:right,w50,h10" class="hatena-fotolife hatena-image-right" width="50" height="10"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right,w50,h10" title="f:id:hatenadiary:20041007101545j:image:right,w50,h10" class="hatena-fotolife hatena-image-right" style="width:50px;height:10px"></a></span></p>
 
 === f:id include Japanese
 --- input
@@ -97,58 +97,58 @@ f:id:sampleのフォトライフ
 --- input
 [f:id:hatenadiary:20041007101545j:image:right,w50,h10]
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right,w50,h10" title="f:id:hatenadiary:20041007101545j:image:right,w50,h10" class="hatena-fotolife hatena-image-right" width="50" height="10"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right,w50,h10" title="f:id:hatenadiary:20041007101545j:image:right,w50,h10" class="hatena-fotolife hatena-image-right" style="width:50px;height:10px"></a></span></p>
 
 === angle bracket
 --- input
 <f:id:hatenadiary:20041007101545j:image:right,w50,h10>
 --- expected
-<p><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank"><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right,w50,h10" title="f:id:hatenadiary:20041007101545j:image:right,w50,h10" class="hatena-fotolife hatena-image-right" width="50" height="10"></a></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><a href="http://f.hatena.ne.jp/hatenadiary/20041007101545" class="hatena-fotolife" target="_blank" itemprop="url"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:image:right,w50,h10" title="f:id:hatenadiary:20041007101545j:image:right,w50,h10" class="hatena-fotolife hatena-image-right" style="width:50px;height:10px"></a></span></p>
 
 === f:id:fid:plain
 --- input
 f:id:hatenadiary:20041007101545j:plain
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain" title="f:id:hatenadiary:20041007101545j:plain" class="hatena-fotolife"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain" title="f:id:hatenadiary:20041007101545j:plain" class="hatena-fotolife"></span></p>
 
 === f:id:fid:plain:small
 --- input
 f:id:hatenadiary:20041007101545j:plain:small
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_m.gif" alt="f:id:hatenadiary:20041007101545j:plain:small" title="f:id:hatenadiary:20041007101545j:plain:small" class="hatena-fotolife"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_m.gif" alt="f:id:hatenadiary:20041007101545j:plain:small" title="f:id:hatenadiary:20041007101545j:plain:small" class="hatena-fotolife"></span></p>
 
 === f:id:fid:plain:medium
 --- input
 f:id:hatenadiary:20041007101545j:plain:medium
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_120.jpg" alt="f:id:hatenadiary:20041007101545j:plain:medium" title="f:id:hatenadiary:20041007101545j:plain:medium" class="hatena-fotolife"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545_120.jpg" alt="f:id:hatenadiary:20041007101545j:plain:medium" title="f:id:hatenadiary:20041007101545j:plain:medium" class="hatena-fotolife"></span></p>
 
 === f:id:fid:plain:w
 --- input
 f:id:hatenadiary:20041007101545j:plain:w50
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:w50" title="f:id:hatenadiary:20041007101545j:plain:w50" class="hatena-fotolife" width="50"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:w50" title="f:id:hatenadiary:20041007101545j:plain:w50" class="hatena-fotolife" style="width:50px"></span></p>
 
 === f:id:fid:plain:h
 --- input
 f:id:hatenadiary:20041007101545j:plain:h50
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:h50" title="f:id:hatenadiary:20041007101545j:plain:h50" class="hatena-fotolife" height="50"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:h50" title="f:id:hatenadiary:20041007101545j:plain:h50" class="hatena-fotolife" style="height:50px"></span></p>
 
 === f:id:fid:plain:right
 --- input
 f:id:hatenadiary:20041007101545j:plain:right
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:right" title="f:id:hatenadiary:20041007101545j:plain:right" class="hatena-fotolife hatena-image-right"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:right" title="f:id:hatenadiary:20041007101545j:plain:right" class="hatena-fotolife hatena-image-right"></span></p>
 
 === f:id:fid:plain:left
 --- input
 f:id:hatenadiary:20041007101545j:plain:left
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:left" title="f:id:hatenadiary:20041007101545j:plain:left" class="hatena-fotolife hatena-image-left"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:left" title="f:id:hatenadiary:20041007101545j:plain:left" class="hatena-fotolife hatena-image-left"></span></p>
 
 === f:id:fid:plain:right,w50,h10
 --- input
 f:id:hatenadiary:20041007101545j:plain:right,w50,h10
 --- expected
-<p><img src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:right,w50,h10" title="f:id:hatenadiary:20041007101545j:plain:right,w50,h10" class="hatena-fotolife hatena-image-right" width="50" height="10"></p>
+<p><span itemscope itemtype="http://schema.org/Photograph"><img itemprop="image" src="http://cdn-ak.f.st-hatena.com/images/fotolife/h/hatenadiary/20041007/20041007101545.jpg" alt="f:id:hatenadiary:20041007101545j:plain:right,w50,h10" title="f:id:hatenadiary:20041007101545j:plain:right,w50,h10" class="hatena-fotolife hatena-image-right" style="width:50px;height:10px"></span></p>

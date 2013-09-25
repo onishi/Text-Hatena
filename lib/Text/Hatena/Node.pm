@@ -7,6 +7,7 @@ use overload
     fallback => 1;
 
 use Text::Hatena::Util;
+use Text::Hatena::Node::Parser;
 
 sub new {
     my ($class, $children) = @_;
@@ -45,16 +46,7 @@ sub as_html_paragraph {
     if ($opts{stopp}) {
         $text;
     } else {
-        "<p>" . join("",
-            map {
-                if (/^(\n+)$/) {
-                    "</p>" . ("<br />\n" x (length($1) - 2)) . "<p>";
-                } else {
-                    join("<br />\n", split /\n/);
-                }
-            }
-            split(/(\n\n+)/, $text)
-        ) . "</p>\n";
+        Text::Hatena::Node::Parser->new->format($text);
     }
 }
 
