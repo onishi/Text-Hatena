@@ -9,3 +9,13 @@ Makefile.old
 nytprof.out
 MANIFEST.bak
 *.sw[po]
+/Text-Hatena-*
+/.build
+/_build
+/_build_params
+/Build
+!Build/
+!META.json
+!LICENSE
+
+MYMETA.*
