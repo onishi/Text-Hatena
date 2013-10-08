@@ -17,7 +17,7 @@ my %escape = (
     "'" => '&#39;',
 );
 
-sub escape_html ($) { ## no critic
+sub escape_html ($) {
     my ($str) = @_;
     my $escape = join "|", keys %escape;
     $str =~ s{($escape)}{ $escape{$1} }ego;
@@ -32,7 +32,7 @@ sub unindent ($) {
     $string;
 }
 
-sub template ($$) { ## no critic
+sub template ($$) {
     my ($template, $keys) = @_;
 
     my $mt = Text::MicroTemplate->new(
@@ -44,7 +44,7 @@ sub template ($$) { ## no critic
 
     my $code     = $mt->code;
     my $expand   = join('; ', map { "my \$$_ = \$_[0]->{$_}" } @$keys);
-    my $renderer = eval << "    ..." or die $@;
+    my $renderer = eval << "    ..." or die $@; ## no critic
         sub {
             $expand;
             $code->();
