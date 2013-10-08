@@ -1,5 +1,7 @@
 Revision history for Perl extension Text::Hatena
 
+{{$NEXT}}
+
 0.31    Wed Sep 25 15:28:58 JST 2013
 	- HTML5 support
 	- Microdata support
